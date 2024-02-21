@@ -8,13 +8,13 @@ ROOT = pathlib.Path(__file__).parent
 DB_PATH = ROOT / "ticket.pdf"
 
 def generate_ticket_pdf(place, show, db_path, name, age, email, date, time, price):
-    # Generate a random 8-digit ticket number
+    
     ticket_number = ''.join(random.choices(string.digits, k=8))
 
-    # Create PDF
+    
     c = canvas.Canvas(str(DB_PATH), pagesize=letter)
 
-    # Set up the content
+    
     content = [
         f"Email: {email}",
         f"Name: {name}",
