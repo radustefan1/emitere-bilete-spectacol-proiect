@@ -23,6 +23,7 @@ class MyGui:
     ROOT = pathlib.Path(__file__).parent
     DB_PATH = ROOT / "issuing_tickets.db"
     LOG_PATH = ROOT / "log.log"
+    PDF_PATH = ROOT / "ticket.pdf"
     
 
     def __init__(self) -> None:
@@ -112,7 +113,7 @@ class MyGui:
                             tickets_table.create_table1()
                             try:
                                 tickets_table.create_ticket1(p_i, s_i, Client(n_i, a_i, n_e))
-                                pdf = generate_ticket_pdf(p_i, s_i, self.DB_PATH, n_i, a_i, n_e, "02.03.2024", "19.00", "30 RON")
+                                pdf = generate_ticket_pdf(p_i, s_i, self.PDF_PATH, n_i, a_i, n_e, "02.03.2024", "19.00", "30 RON")
                                 tickets_table.update1(str(pdf), p_i)
                         
 
@@ -123,7 +124,7 @@ class MyGui:
                             tickets_table.create_table2()
                             try:
                                 tickets_table.create_ticket2(p_i, s_i, Client(n_i, a_i, n_e))
-                                pdf = generate_ticket_pdf(p_i, s_i, self.DB_PATH, n_i, a_i, n_e, "04.03.2024", "20.00", "35 RON")
+                                pdf = generate_ticket_pdf(p_i, s_i, self.PDF_PATH, n_i, a_i, n_e, "04.03.2024", "20.00", "35 RON")
                                 tickets_table.update2(str(pdf), p_i)
                             except sqlite3.IntegrityError as err:
                                 messagebox.showerror("Error","This place is reserved!")
@@ -132,7 +133,7 @@ class MyGui:
                             tickets_table.create_table3()
                             try:
                                 tickets_table.create_ticket3(p_i, s_i, Client(n_i, a_i, n_e))
-                                pdf = generate_ticket_pdf(p_i, s_i, self.DB_PATH, n_i, a_i, n_e, "06.03.2024", "21.00", "40 RON")
+                                pdf = generate_ticket_pdf(p_i, s_i, self.PDF_PATH, n_i, a_i, n_e, "06.03.2024", "21.00", "40 RON")
                                 tickets_table.update1(str(pdf), p_i)
                             except sqlite3.IntegrityError as err:
                                 messagebox.showerror("Error","This place is reserved!")
