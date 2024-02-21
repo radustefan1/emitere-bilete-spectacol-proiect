@@ -39,11 +39,3 @@ def generate_ticket_pdf(place, show, db_path, name, age, email, date, time, pric
     print(f"Ticket PDF generated: {DB_PATH}")
     return ticket_number
 
-# Example usage
-# place = "1"
-# name = "John Doe"
-# age = 30
-# show = "Example Show"
-# email = "john@example.com"
-
-# generate_ticket_pdf(place, show, name, age, email)
