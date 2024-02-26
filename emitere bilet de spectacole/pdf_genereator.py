@@ -59,7 +59,7 @@ def generate_ticket_pdf(place, show, db_path, name, age, email, date, time, pric
     ticket_number = ''.join(random.choices(string.digits, k=8))
 
     
-    c = canvas.Canvas(str(DB_PATH), pagesize=letter)
+    c = canvas.Canvas(str(db_path), pagesize=letter)
 
     
     content = [
@@ -83,6 +83,6 @@ def generate_ticket_pdf(place, show, db_path, name, age, email, date, time, pric
     
     c.save()
 
-    print(f"Ticket PDF generated: {DB_PATH}")
+    print(f"Ticket PDF generated: {db_path}")
     return ticket_number
 
