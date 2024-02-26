@@ -199,7 +199,7 @@ class TicketsTabel:
 #         A list of tuples representing the ticket entries matching the email.
 
         cursor = self.con.cursor()
-        cursor.execute("""SELECT * FROM show__2 WHERE name LIKE ? and nr_loc like ?""", (email,))
+        cursor.execute("""SELECT * FROM show__2 WHERE email LIKE ?""", (email,))
         return cursor.fetchall()
     
     def read_by_email3(self, email):
@@ -215,7 +215,7 @@ class TicketsTabel:
     #     A list of tuples representing the ticket entries matching the email.
 
         cursor = self.con.cursor()
-        cursor.execute("""SELECT * FROM show__3 WHERE name LIKE ? and nr_loc like ?""", (email,))
+        cursor.execute("""SELECT * FROM show__3 WHERE email LIKE ?""", (email,))
         return cursor.fetchall()
 
 
