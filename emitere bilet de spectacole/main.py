@@ -134,7 +134,7 @@ class MyGui:
                             try:
                                 tickets_table.create_ticket3(p_i, s_i, Client(n_i, a_i, n_e))
                                 pdf = generate_ticket_pdf(p_i, s_i, self.PDF_PATH, n_i, a_i, n_e, "06.03.2024", "21.00", "40 RON")
-                                tickets_table.update1(str(pdf), p_i)
+                                tickets_table.update3(str(pdf), p_i)
                             except sqlite3.IntegrityError as err:
                                 messagebox.showerror("Error","This place is reserved!")
                     except ValueError as err:
