@@ -322,7 +322,7 @@ class TicketsTabel:
     #     The email address to delete.
         
         cursor = self.con.cursor()
-        cursor.execute("DELETE FROM show__3 WHERE email == ?", (email))
+        cursor.execute("DELETE FROM show__3 WHERE email == ?", (email,))
         self.con.commit()
 
 
